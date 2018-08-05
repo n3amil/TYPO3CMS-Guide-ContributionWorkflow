@@ -140,6 +140,13 @@ When you are done you can do::
 `ddev remove` does not remove the database. For a list of commands see::
 
    ddev help
+
+.. hint::
+   If you shutdown/restart docker while working with ddev and dont run "ddev stop" before the running ddev projects,
+   the database might get corrupt and ddev start wont work anymore with the error:
+   "Failed to start <projectname>: db service health check timed out"
+   try running "ddev remove --remove-data" and "ddev start" again.  See https://github.com/drud/ddev/issues/748
+   !ATTENTION! this will remove your data entirely
    
 Resources
 =============
